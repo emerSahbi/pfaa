@@ -1,0 +1,44 @@
+<div class="container mt-5" >
+
+<div class="card">
+  <h5 class="card-header">Passez Votre Commande</h5>
+  <div class="card-body" #Card id="card" > <form [formGroup]="CommandeForm" >
+
+    <h5 class="card-title text-lg-center alert-danger">Veuillez entrer Vos donneés</h5>
+    <p class="card-text mt-sm-1 font-weight-bold">Nom: </p>
+      <input type="text" placeholder="Votre Nom...." class="form-control " formControlName="nom" [(ngModel)]="commande.nom" >
+    <div class="alert alert-danger" *ngIf="CommandeForm.controls['nom'].errors">
+      Veuillez saisir votre nom ( minimum 3 chiffres )
+    </div>
+    <p class="card-text mt-sm-1 font-weight-bold">Prenom: </p>
+    <input type="text" placeholder="Prenom...." class="form-control" formControlName="prenom" [(ngModel)]="commande.prenom">
+    <div class="alert alert-danger" *ngIf="CommandeForm.controls['prenom'].errors">
+      Veuillez saisir votre prénom  ( minimum 3 chiffres  )
+    </div>
+    <p class="card-text mt-sm-1 font-weight-bold">Numero de teléphone: </p>
+    <input type="number" placeholder="Numtel...." class="form-control" formControlName="numtel" [(ngModel)]="commande.numTel" >
+    <div class="alert alert-danger" *ngIf="CommandeForm.controls['numtel'].errors">
+      Veuillez saisir votre numéro de télephone  (  )
+    </div>
+    <p class="card-text mt-sm-1 font-weight-bold">Adresse: </p>
+    <input type="text" placeholder="adresse...." class="form-control " formControlName="adresse" [(ngModel)]="commande.adresse" >
+    <div class="alert alert-danger" *ngIf="CommandeForm.controls['adresse'].errors">
+      Veuillez saisir votre adresse  (  )
+    </div>
+    <p class="card-text mt-sm-1 font-weight-bold">Ville: </p>
+    <input type="text" placeholder="ville...." class="form-control" formControlName="ville" [(ngModel)]="commande.ville" >
+    <div class="alert alert-danger" *ngIf="CommandeForm.controls['ville'].errors">
+      Veuillez saisir votre Ville  (  )
+    </div>
+    <p class="card-text mt-sm-1 font-weight-bold">Informations supplémentaires : </p>
+    <textarea class="form-control" placeholder="informations supplimentaires...." formControlName="info" rows="3" [(ngModel)]="commande.info" ></textarea>
+    <div class="alert alert-danger" *ngIf="CommandeForm.controls['info'].errors">
+      Maximum 50 chiffres
+    </div>
+    <p class="card-text font-italic font-weight-bold">Nombre de Produits : {{p.listeProduit.length}}</p>
+    <button  class="btn btn-primary" (click)="AjoutCommande()" [disabled]="CommandeForm.invalid">Valider Commande</button>
+    <a  class="btn btn-danger" >Generer Commande PDF</a>
+  </form>
+  </div>
+</div>
+</div>

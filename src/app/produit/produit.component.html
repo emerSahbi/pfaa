@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="d-flex align-content-stretch flex-wrap m-lg-5">
+    <div *ngFor="let i of p" class="card bg-light mt-3 m-lg-4" style="width: 18rem;">
+      <img class="card-img-top" src="{{i.photo}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{i.nom}}</h5>
+        <p class="card-text">{{i.description}}</p>
+        <h6 class="card-title">Prix(TND): {{i.prix}}</h6>
+        <div class="d-flex justify-content-around">
+          <a routerLink="/produit/{{i.id}}" routerLinkActive="active" class="btn btn-outline-info" >View Product</a>
+          <a class="btn btn-danger" (click)="ajouterProduitPanier(i.id)">Add To Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

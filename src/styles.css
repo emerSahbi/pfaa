@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+.card {border: 0;}
+.card-body {padding: .5rem 0; font-size: 14px;}
+.card-title small {font-size: 14px; font-weight: 200;}
+.card-text del {font-weight: 200;}
+.card-img-overlay button i {font-weight: normal;}
+.btn {  padding: .75rem; line-height: 1;}
+
+.btn-light:not(:disabled):not(.disabled).active,
+.btn-light:not(:disabled):not(.disabled):active,
+.show>.btn-light.dropdown-toggle {
+  background-color: black;
+  color: white;
+}
+/* Made with love by Mutiullah Samim*/
+
+html,body{
+  background-image: url('https://i.pinimg.com/originals/b0/92/87/b09287328a7c764ed7654a163a86c77f.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
